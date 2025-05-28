@@ -1,0 +1,15 @@
+trigger:
+- master
+
+pool:
+  name: Default  # for self-hosted agent
+
+steps:
+- script: echo "Azure Pipeline for Gradle project without JAR"
+  displayName: 'Start Message'
+
+- script: ./gradlew build
+  displayName: 'Build the Project with Gradle'
+
+- script: ./gradlew run
+  displayName: 'Run the Application'
